@@ -1,0 +1,12 @@
+1- instalo o npm init -y
+npm install react
+npm i react-dom
+
+	configurando babel
+o que é - serve pra converter o codigo numa sintaxe que o browser entenda
+npm i @babel/core - lib principal
+ @babel/cli - usar o terminal
+@babel/preset-env -D - converte de acordo com o ambiente
+
+crio o file babel.config-js na raiz
+rodo npm babel src/index.js --out-file dist/bubdle.js
