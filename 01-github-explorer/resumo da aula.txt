@@ -9,4 +9,13 @@ npm i @babel/core - lib principal
 @babel/preset-env -D - converte de acordo com o ambiente
 
 crio o file babel.config-js na raiz
-rodo npm babel src/index.js --out-file dist/bubdle.js
+rodo npx babel src/index.js --out-file dist/bundle.js
+
+agora instalo o babel/preset-react pra entender reactjs
+
+	webpack
+trata os arq pra converter em formatos que o browser entende
+
+yarn - D webpack webpack-cli webpack-dev-server
+
+crio um arq webpack.config.js
