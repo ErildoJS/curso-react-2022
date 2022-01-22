@@ -29,3 +29,4 @@ agora rodo npx webpack serve
 
 	configuran do source map
 sao formas de ver o codigo original mesmo quando esta embaralhado no bundle.js
+
