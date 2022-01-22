@@ -16,6 +16,16 @@ agora instalo o babel/preset-react pra entender reactjs
 	webpack
 trata os arq pra converter em formatos que o browser entende
 
-yarn - D webpack webpack-cli webpack-dev-server
+npm i - D webpack webpack-cli webpack-dev-server
 
 crio um arq webpack.config.js
+
+npm webpack
+
+	instalando o html-webpack-plugin pra nao precisar importar o arq bundle
+	dentro do arq index.html
+
+agora rodo npx webpack serve
+
+	configuran do source map
+sao formas de ver o codigo original mesmo quando esta embaralhado no bundle.js
