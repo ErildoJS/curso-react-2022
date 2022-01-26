@@ -15,7 +15,14 @@ module.exports = {
     extensions: ['.js', '.jsx'],/** arq que ele pode ler */
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public')
+    /**
+     * static: {
+      directory: path.resolve(__dirname, 'public')
+    }
+     */
+    static: {
+      directory: path.resolve(__dirname, 'dist')
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

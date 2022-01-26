@@ -1,5 +1,5 @@
-import './styles/global.scss'
+import { RepositoryList } from "./components/repositoryList";
 
 export function App() {
-  return <h1>ola mundo</h1>
+  return <RepositoryList />
 }
