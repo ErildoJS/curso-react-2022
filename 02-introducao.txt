@@ -2,3 +2,4 @@ react - ferramenta de criacao de interfaces, da pra criar todo tipo de interface
 usado: web, tv, ui
 
 	spa: a pagina o muda na area que precisa mudar o resto fica constante
+
