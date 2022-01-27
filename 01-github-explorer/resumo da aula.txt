@@ -37,3 +37,6 @@ ao invez disso ele criou variaveis proprias que ele vai monitorar
 	imutabilidade - uma var nunca vai ter o seu valor auterado directamente , apenas vai criar uma nova var
 	pra manter o valor existente, e o novo valor
 
+
+se eu quero dar um reload na pagina e ele nao resetar o estado eu devo usar o fast refresh
+
