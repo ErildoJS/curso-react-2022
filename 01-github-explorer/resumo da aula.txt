@@ -30,3 +30,10 @@ agora rodo npx webpack serve
 	configuran do source map
 sao formas de ver o codigo original mesmo quando esta embaralhado no bundle.js
 
+	estado
+o react nao monitora as variaveis pra dar um reload na tela
+ao invez disso ele criou variaveis proprias que ele vai monitorar
+
+	imutabilidade - uma var nunca vai ter o seu valor auterado directamente , apenas vai criar uma nova var
+	pra manter o valor existente, e o novo valor
+
