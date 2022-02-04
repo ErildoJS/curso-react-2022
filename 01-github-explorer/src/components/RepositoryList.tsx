@@ -2,22 +2,23 @@ import { useState, useEffect} from 'react'
 import { RepositoryItem } from "./RepositoryItem";
 import '../styles/repositories.scss'
 
-
-
-const repository = {
-  name: 'unform',
-  description: 'forms in react',
-  link: 'https://github.com/unform/unform'
+type Repository = {
+  name: string,
+  description: string,
+  html_url: string
 }
 
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([])
+  const [repositories, setRepositories] = useState<Repository[]>([])
 
+  
   useEffect(() => {
     fetch('https://api.github.com/users/ErildoJS/repos').
       then(response => response.json())
       .then(data => setRepositories(data))
   }, [])
+
+
   return (
     <section className="repository-list">
       <h1>Lista de Repositorios</h1>

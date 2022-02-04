@@ -7,13 +7,13 @@ const isDevelopment = process.env.NODE_ENV !== 'production'
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   devtool: isDevelopment ? 'eval-source-map': 'source-map',
-  entry: path.resolve(__dirname, 'src', 'index.jsx'),/** arq de entrada */
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),/** arq de entrada */
   output: {
     path: path.resolve(__dirname, 'dist'),/** arq que vou gerar */
     filename: 'bundle.js',/** nome do arq gerado */
   },
   resolve: {
-    extensions: ['.js', '.jsx'],/** arq que ele pode ler */
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],/** arq que ele pode ler */
   },
   devServer: {
     /**
@@ -34,7 +34,7 @@ module.exports = {
   module: {/** como a nossa app vai se comportar quando estivermos a importar os arqs */
      rules: [
        {
-         test: /\.jsx$/,
+         test: /\.(j|t)sx$/,
          exclude: /node_modules/,
          use: {
            loader: 'babel-loader',/**integracao entre o babel eo webpack */

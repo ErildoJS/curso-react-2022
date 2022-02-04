@@ -1,0 +1,16 @@
+instalo o npm i miragejs
+vou no component Transactions 
+dentro da sua funcao
+crio um fetch pra (httpÇ//localhost:3000/api/transactions) e pego  a resposta
+depois
+vou no index.tsx
+e import do miragejs uma func createServer
+chamo essa funcao
+dentro dela chamo outra funcao chamada routes
+dentro de routes retorno this.namespace = 'api'
+depois
+this.get('/transactions', {
+	return [
+	{id: 1; etc}
+]
+})
