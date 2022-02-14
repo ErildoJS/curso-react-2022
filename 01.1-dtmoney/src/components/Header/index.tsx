@@ -1,6 +1,7 @@
-import { useState } from 'react'
 import logoImg from '../../assets/logo.svg'
 import {Container, Content} from './styles'
+
+
 type HeaderProps = {
   onOpenNewTransactionModal: () => void
 }

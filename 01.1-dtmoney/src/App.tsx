@@ -1,8 +1,12 @@
-import { GlobalStyle } from "./styles/global"
+import { useState } from "react"
+import Modal from "react-modal"
+
+import {TransactionsProvider} from './hooks/useTransactions'
 import {Header} from './components/Header'
 import {Dashboard} from './components/Dashboard'
-import { useState } from "react"
-import Modal from 'react-modal'
+import { NewTransactionModal } from "./components/NewTransactionModal"
+
+import { GlobalStyle } from "./styles/global"
 
 Modal.setAppElement('#root')
 
@@ -18,21 +22,16 @@ export function App() {
   }
 
   return (
-    <>
+    <TransactionsProvider>
       <Header  onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
       <Dashboard />
-
-      {/** onRequestClose - fecha o modal */}
-      <Modal 
+      <NewTransactionModal 
         isOpen={isNewTransactionModalOpen}
-        
-        onRequestClose={handleCloseNewTransactionModal} 
-      >
-        <h2>Cadastrar transação</h2>
-      </Modal>      
+        onRequestClose={handleCloseNewTransactionModal}
+      />
 
       <GlobalStyle />
-    </>
+    </TransactionsProvider>
   );
 }
 

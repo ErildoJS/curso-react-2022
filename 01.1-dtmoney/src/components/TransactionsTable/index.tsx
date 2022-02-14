@@ -1,17 +1,13 @@
-import { useEffect } from "react";
-import { api } from "../../services/api";
 import { Container } from "./styles";
+import {useTransactions} from '../../hooks/useTransactions'
+
+
 
 export function TransactionsTable() {
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    api.get('transactions').then(response => console.log(response.data)
-      )
-  }, [])
+  const { transactions } = useTransactions()
+    
 
-
-  
-  return (
+    return (
     <Container>
       <table>
         <thead>
@@ -24,22 +20,23 @@ export function TransactionsTable() {
         </thead>
 
         <tbody>
-          <tr>
-            <td>Desenvolvimento de uma EAD</td>
-            <td className="deposit">kwz200.000,00</td>
-            <td>Desenvolvimento</td>
-            <td>01/01/2022</td>
+          {transactions.map(transaction => (
+            <tr key={transaction.id}>
+            <td>{transaction.title}</td>
+            <td className={transaction.type}>
+              {new Intl.NumberFormat('pt-AO', {
+                style: 'currency',
+                currency: 'KWZ'
+              }).format(transaction.amount)}
+              </td>
+            <td>{transaction.category}</td>
+            <td>{new Intl.DateTimeFormat('pt-AO').format(new Date(transaction.createdAt))}
+              </td>
           </tr>
-
-          <tr>
-            <td>aluguer</td>
-            <td className="withdraw">-kwz100.000,00</td>
-            <td>casa</td>
-            <td>10/01/2022</td>
-          </tr>
-
+          ))}
         </tbody>
       </table>
     </Container>
   )
 }
+
